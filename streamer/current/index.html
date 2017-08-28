@@ -2,15 +2,39 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="style.css"></link>
-	<title>CryptoCompare Streamer API Example</title>
+	<script type="text/javascript" src="./helper.js"></script>
+	<title>Elias' CryptoCurrency Dashbaord</title>
 </head>
 
 <body>
+<div class="topBar">
+	<div class="dropdown">
+	  <button onclick="selectToCurrency()" class="dropbtn">To Currency</button>
+	  <div id="toCurrency" class="dropdown-content">
+	    <a href="javascript:updateToSym('USD')">USD</a>
+	    <a href="javascript:updateToSym('CAD')">CAD</a>
+	  </div>
+	</div>
+
+	<!-- TODO: Add support for multiple exchange -->
+	<div class="dropdown">
+	  <button onclick="selectExchange()" class="dropbtn">Exchange</button>
+	  <div id="exchange" class="dropdown-content">
+	  	<a href="javascript:updateExchange('CCCAGG')">Market</a>
+	    <a href="javascript:updateExchange('Coinbase')">Conebase</a>
+	    <a href="javascript:updateExchange('Poloniex')">Bittrex</a>
+	    <a href="javascript:updateExchange('Poloniex')">Poloniex</a>
+	  </div>
+	</div>
+</div>
+
 <div id="content"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.js"></script>
 <script src="../ccc-streamer-utilities.js"></script>
 <script src="./stream.js"></script>
-
+<script type="text/javascript">
+	init();
+</script>
 </body>
 </html>
